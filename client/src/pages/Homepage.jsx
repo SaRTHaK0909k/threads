@@ -1,6 +1,7 @@
 import { Box, Container, Divider, List, ListItem } from "@chakra-ui/react";
 import { useLayoutEffect, useState } from "react";
-import BannerImage from "../assets/aaron-burden.jpg";
+// import BannerImage from "../assets/aaron-burden.jpg";
+import BannerImage1 from "../assets/thREADS.png"
 import BlogList from "../components/BlogList";
 import { WithAuth } from "../components/PrivateRoute";
 import RootLayout from "../components/RootLayout";
@@ -43,7 +44,7 @@ const Homepage = () => {
     <>
       <RootLayout>
         <Box
-          backgroundImage={BannerImage}
+          backgroundImage={BannerImage1}
           height={300}
           width={"full"}
           w="full"

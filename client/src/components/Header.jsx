@@ -18,7 +18,7 @@ import { useMutation } from "@tanstack/react-query";
 import PropTypes from "prop-types";
 import { BiMenu } from "react-icons/bi";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/vs-logo.png";
+import Logo from "../assets/thREADS.png";
 import useAuthStore from "../store/useAuthStore";
 import useCategoryStore from "../store/useCategoryStore";
 import { instance } from "../utils/API";
@@ -66,15 +66,17 @@ const Header = () => {
         as={"header"}
         borderBottom={"1px solid"}
         borderBottomColor={"gray.100"}
+        style={{backgroundColor: "black"}}
       >
         <Flex mx={{ base: 5, md: 20 }} h="16" alignItems={"center"}>
           <Flex
             width={"full"}
             justifyContent={"space-between"}
             alignItems={"center"}
+            
           >
             <Box as={Link} to={"/"}>
-              <Image src={Logo} width={50} alt="logo" />
+              <Image src={Logo}  height={50} width={150} alt="logo" style={{marginLeft: -30, borderRadius: 10}} />
             </Box>
             <Icon
               as={BiMenu}
@@ -94,6 +96,7 @@ const Header = () => {
               display={{ base: "none", md: "flex" }}
               alignItems={"center"}
               gap={5}
+              style={{color: "white", fontSize: 22, fontWeight: 400, letterSpacing: -1, marginRight: -30}}
             >
               {isLoggedIn ? (
                 <>

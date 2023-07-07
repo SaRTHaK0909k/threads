@@ -75,6 +75,7 @@ const Homepage = () => {
               onClick={() => {
                 setSelectedCategory({ name: "all" });
               }}
+              style={{fontSize: 22, marginRight: 50}}
             >
               All
             </ListItem>
@@ -94,6 +95,7 @@ const Homepage = () => {
                       : "transparent"
                   } `}
                   onClick={() => setSelectedCategory(item)}
+                  style={{fontSize: 22, marginRight: 50}}
                 >
                   {item.name}
                 </ListItem>

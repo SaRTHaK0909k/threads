@@ -55,18 +55,18 @@ const Profile = () => {
               isLoading={isLoading}
             />
           </Flex>
-          <Flex flex={1} alignItems={"center"} flexDir={"column"} top={5}>
+          <Flex flex={1} alignItems={"center"} flexDir={"column"} top={5} style={{backgroundColor: "#a6a6a6", height: "100vh", paddingTop: 40, borderRadius: 20}}>
             <Avatar
               size={"2xl"}
               name={response?.data?.name}
               src={response?.data?.avatar}
               bg={"blue.600"}
               color={"white"}
+              backgroundColor={"black"}
             />
-            <Text fontSize={"3xl"}>{response?.data?.name}</Text>
+            <Text fontSize={"3xl"} marginTop={5}>{response?.data?.name}</Text>
             <Text>
-              Joined On:{" "}
-              {dayjs(response?.data?.createdOn).format("DD-MMM-YYYY hh:mm A")}
+              BETA User
             </Text>
           </Flex>
         </Flex>

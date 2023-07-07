@@ -76,7 +76,7 @@ const Header = () => {
             
           >
             <Box as={Link} to={"/"}>
-              <Image src={Logo}  height={50} width={150} alt="logo" style={{marginLeft: -30, borderRadius: 10}} />
+              <Image src={Logo}  height={45} width={150} alt="logo" style={{marginLeft: -30, borderRadius: 5}} />
             </Box>
             <Icon
               as={BiMenu}
@@ -100,8 +100,8 @@ const Header = () => {
             >
               {isLoggedIn ? (
                 <>
-                  <Link to={`/profile/${user?.id}`}>Profile</Link>
-                  <Link to={"/add-blog"}>Write blog</Link>
+                  <Link to={`/profile/${user?.id}`} style={{marginRight: 50}}>Profile</Link>
+                  <Link to={"/add-blog"} style={{marginRight: 50}}>Write blog</Link>
                   <Link to={"/"} onClick={() => mutate()}>
                     Sign out
                   </Link>

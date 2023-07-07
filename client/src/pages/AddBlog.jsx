@@ -299,7 +299,7 @@ const AddBlog = () => {
                   <Flex flexDir={"column"} rowGap={5} mt={5} marginTop={5}>
                     {recentBlogs?.data?.map((item) => (
                       <Flex key={item?.id} columnGap={3} alignItems={"center"} fontWeight={700}>
-                        <Avatar name={item?.user?.name} />
+                        <Avatar name={item?.user?.name} backgroundColor={"black"} color={"white"}/>
                         <Flex flexDir={"column"}>
                           <Text
                             as={Link}

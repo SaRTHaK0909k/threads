@@ -153,7 +153,7 @@ const SignUp = () => {
                       id={"password"}
                       type={showPassword ? "text" : "password"}
                       size={"sm"}
-                      placeholder={"Enter password"}
+                      placeholder={"Enter password (8 digits required)"}
                       value={values.password}
                       onChange={handleChange}
                     />
@@ -183,7 +183,7 @@ const SignUp = () => {
                       id={"confirmpassword"}
                       type={showPassword ? "text" : "password"}
                       size={"sm"}
-                      placeholder={"Enter confirm password"}
+                      placeholder={"Enter confirm password (8 digits required)"}
                       value={values.confirmpassword}
                       onChange={handleChange}
                     />
@@ -206,7 +206,8 @@ const SignUp = () => {
                       as={Link}
                       fontSize={"inherit"}
                       to={"/sign-in"}
-                      _hover={{ border: "none",color:"blue" }}
+                      color={"blue"}
+                      _hover={{ border: "none" }}
                     >
                       {" "}
                       Sign in here

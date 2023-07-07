@@ -154,8 +154,9 @@ const SignIn = () => {
                     <Box
                       as={Link}
                       fontSize={"15"}
+                      color={"blue"}
                       to={"/sign-up"}
-                      _hover={{ border: "none",color:"blue" }}
+                      _hover={{ border: "none" }}
                     >
                       {" "}
                       Sign up here

@@ -290,14 +290,15 @@ const AddBlog = () => {
                   overflowY={"auto"}
                   scrollBehavior={"smooth"}
                   alignItems={"center"}
+                  style={{backgroundColor: "#a6a6a6", height: "100vh",paddingTop:40, borderRadius:20 }}
                 >
-                  <Text textAlign={"center"} fontSize={"2xl"}>
+                  <Text textAlign={"center"} fontSize={"4xl"} fontWeight={700}>
                     Recent Blogs
                   </Text>
                   {(loading || fetching) && <Loading />}
-                  <Flex flexDir={"column"} rowGap={5} mt={5}>
+                  <Flex flexDir={"column"} rowGap={5} mt={5} marginTop={5}>
                     {recentBlogs?.data?.map((item) => (
-                      <Flex key={item?.id} columnGap={3} alignItems={"center"}>
+                      <Flex key={item?.id} columnGap={3} alignItems={"center"} fontWeight={700}>
                         <Avatar name={item?.user?.name} />
                         <Flex flexDir={"column"}>
                           <Text
@@ -314,12 +315,6 @@ const AddBlog = () => {
                           >
                             {item?.category?.name}
                           </Badge>
-                          <Text fontSize={"smaller"} color={"gray.600"}>
-                            on{" "}
-                            {dayjs(item?.createdOn).format(
-                              "DD-MMM-YYYY hh:mm A"
-                            )}
-                          </Text>
                         </Flex>
                       </Flex>
                     ))}

@@ -23,6 +23,7 @@ import RootLayout from "../components/RootLayout";
 import useAuthStore from "../store/useAuthStore";
 import { instance } from "../utils/API";
 import { SIGNIN, SIGNUP } from "../utils/ROUTES";
+import backgroundImage from "../assets/backgroundImage.jpg";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -86,18 +87,26 @@ const SignUp = () => {
           paddingBottom={10}
         >
           <Box
-            backgroundColor={"gray.50"}
             as={"form"}
             onSubmit={handleSubmit}
             paddingBottom={10}
+            backgroundImage={`url(${backgroundImage})`}
+            backgroundSize="cover"
+            h="80vh"
+            pt={8}
           >
+          
             <Container
-              maxW={"sm"}
+              maxW={"xl"}
+              marginTop={4}
               backgroundColor={"white"}
               px={10}
               py={10}
               rounded={"md"}
-              boxShadow={"md"}
+              boxShadow={"sm"}
+              _hover={{
+                boxShadow: "0 0 8px rgba(0, 0, 0, 0.8)",
+              }}
             >
               <Flex
                 h={"full"}
@@ -105,7 +114,7 @@ const SignUp = () => {
                 alignItems={"center"}
                 rowGap={3}
               >
-                <Text textAlign={"center"} fontSize={"xl"}>
+                <Text textAlign={"center"} fontSize={"2xl"}>
                   Sign Up
                 </Text>
                 <FormControl isInvalid={Boolean(touched.name && errors.name)}>
@@ -114,7 +123,7 @@ const SignUp = () => {
                     name={"name"}
                     id={"name"}
                     type={"text"}
-                    size={"sm"}
+                    size={"md"}
                     placeholder={"Enter name"}
                     value={values.name}
                     onChange={handleChange}
@@ -122,7 +131,7 @@ const SignUp = () => {
                   <FormErrorMessage>{errors?.name}</FormErrorMessage>
                 </FormControl>
                 <FormControl isInvalid={Boolean(touched.email && errors.email)}>
-                  <FormLabel htmlFor={"email"}>Email</FormLabel>
+                  <FormLabel htmlFor={"email"} fontSize={"18px"} >Email</FormLabel>
                   <Input
                     name={"email"}
                     id={"email"}
@@ -137,7 +146,7 @@ const SignUp = () => {
                 <FormControl
                   isInvalid={Boolean(touched.password && errors.password)}
                 >
-                  <FormLabel htmlFor={"password"}>Password</FormLabel>
+                  <FormLabel htmlFor={"password"} fontSize={"18px"}>Password</FormLabel>
                   <InputGroup>
                     <Input
                       name={"password"}
@@ -148,9 +157,9 @@ const SignUp = () => {
                       value={values.password}
                       onChange={handleChange}
                     />
-                    <InputRightElement boxSize={"30px"}>
+                    <InputRightElement boxSize={"40px"}>
                       <IconButton
-                        size={"sm"}
+                        size={"md"}
                         aria-label={"password"}
                         onClick={setShowPassword.toggle}
                       >
@@ -178,9 +187,9 @@ const SignUp = () => {
                       value={values.confirmpassword}
                       onChange={handleChange}
                     />
-                    <InputRightElement boxSize={"30px"}>
+                    <InputRightElement boxSize={"40px"}>
                       <IconButton
-                        size={"sm"}
+                        size={"md"}
                         aria-label={"confirmpassword"}
                         onClick={setShowPassword.toggle}
                       >
@@ -190,14 +199,14 @@ const SignUp = () => {
                   </InputGroup>
                   <FormErrorMessage>{errors?.confirmpassword}</FormErrorMessage>
                 </FormControl>
-                <Box w={"full"} mt={8}>
-                  <Text fontSize={"xs"} mb={1}>
+                <Box w={"full"} mt={4}>
+                  <Text fontSize={"15px"} mb={4}>
                     Already have an account?
                     <Box
                       as={Link}
                       fontSize={"inherit"}
                       to={"/sign-in"}
-                      _hover={{ border: "none" }}
+                      _hover={{ border: "none",color:"blue" }}
                     >
                       {" "}
                       Sign in here
@@ -207,8 +216,10 @@ const SignUp = () => {
                     size={"sm"}
                     width={"full"}
                     type={"submit"}
-                    colorScheme={"blue"}
+                    colorScheme={"green"}
                     isLoading={isLoading}
+                    fontSize={"20px"}
+                    height={"45px"}
                   >
                     Sign Up
                   </Button>

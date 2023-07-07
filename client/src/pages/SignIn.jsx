@@ -23,6 +23,7 @@ import RootLayout from "../components/RootLayout";
 import useAuthStore from "../store/useAuthStore";
 import { instance } from "../utils/API";
 import { SIGNIN } from "../utils/ROUTES";
+import backgroundImage from "../assets/backgroundImage.jpg";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -77,17 +78,25 @@ const SignIn = () => {
         <Box backgroundColor={"gray.50"} h={"full"} w={"full"} paddingTop={10}>
           <Box
             as={"form"}
-            backgroundColor={"gray.50"}
-            pb={10}
+            pt={120}
             onSubmit={handleSubmit}
+            backgroundImage={`url(${backgroundImage})`}
+            backgroundSize="cover"
+            h="80vh"
+            
           >
+          <Box></Box>
             <Container
-              maxW={"sm"}
+              maxW={"lg"}
+              h={"400px"}
               backgroundColor={"white"}
               px={10}
               py={10}
               rounded={"md"}
               boxShadow={"sm"}
+              _hover={{
+                boxShadow: "0 0 8px rgba(51, 102, 255, 1)",
+              }}
             >
               <Flex
                 h={"full"}
@@ -139,14 +148,14 @@ const SignIn = () => {
                   </InputGroup>
                   <FormErrorMessage>{errors?.password}</FormErrorMessage>
                 </FormControl>
-                <Box w={"full"} mt={8}>
-                  <Text fontSize={"xs"} mb={1}>
+                <Box w={"full"} mt={4}>
+                  <Text fontSize={"15px"} mb={4}>
                     Don&apos;t have an account?
                     <Box
                       as={Link}
-                      fontSize={"inherit"}
+                      fontSize={"15"}
                       to={"/sign-up"}
-                      _hover={{ border: "none" }}
+                      _hover={{ border: "none",color:"blue" }}
                     >
                       {" "}
                       Sign up here
@@ -156,8 +165,10 @@ const SignIn = () => {
                     size={"sm"}
                     width={"full"}
                     type={"submit"}
-                    colorScheme={"blue"}
+                    colorScheme={"green"}
                     isLoading={isLoading}
+                    fontSize={"20px"}
+                    height={"45px"}
                   >
                     Sign In
                   </Button>
